@@ -1,0 +1,21 @@
+Package: coagmet
+Title: API Wrapper for CoAgMet Weather
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Giovanni",
+           family = "Colitti",
+           role = c("cre", "aut"),
+           email = "g.a.colitti@gmail.com")
+Description: R interface to Colorado's Mesonet (CoAgMet) API.
+License: MIT + file LICENSE
+URL: http://this
+BugReports: http://that
+Imports: 
+    attempt,
+    curl,
+    httr,
+    jsonlite,
+    purrr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
