@@ -5,9 +5,9 @@
 \title{Get CoAgMet Data}
 \usage{
 get_coagmet_data(
-  table = c("meta", "monthly", "daily", "hourly", "five_minute", "soilmoisture_daily",
+  table = c("meta", "daily", "hourly", "five_minute", "soilmoisture_daily",
     "soilmoisture_hourly"),
-  source = c("coag", "coop", "snotel", "coco"),
+  source = c("coag"),
   stations = NULL,
   geo_region = NULL,
   start_date = NULL,
@@ -17,14 +17,13 @@ get_coagmet_data(
 }
 \arguments{
 \item{table}{A character specifying which data table to get. Can be one of 
-\code{"meta", "monthly", "daily", "hourly", "five_minute", "soilmoisture_daily", "soilmoisture_hourly"}.
+\code{"meta", "daily", "hourly", "five_minute", "soilmoisture_daily", "soilmoisture_hourly"}.
 When \code{table = "meta"} source must be either \code{"coag"} or \code{"coop"}.}
 
-\item{source}{A character specifying where to get the data. 
-Can be one of \code{"coag", "coop", "snotel", "coco"}.}
+\item{source}{Currently the only supported source is \code{"coag"}.}
 
 \item{stations}{An optional vector of weather station names to get data for. 
-See \url{https://coagmet.colostate.edu/station_index.php}.}
+See \url{https://coagmet.colostate.edu/station_index.php}. Defaults to all stations.}
 
 \item{geo_region}{A numeric vector of length 4. Used to specify southwest and northwest coordinates
 of the geographic region (box) in which data should be retrieved.}

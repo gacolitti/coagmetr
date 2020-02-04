@@ -8,7 +8,7 @@ unlink("DESCRIPTION")
 my_desc <- description$new("!new")
 
 # Set your package name
-my_desc$set("Package", "coagmet")
+my_desc$set("Package", "coagmetr")
 
 #Set your name
 my_desc$set("Authors@R", "person('Giovanni', 'Colitti', email = 'g.a.colitti@gmail.com', 
@@ -25,8 +25,8 @@ my_desc$set(Title = "API Wrapper for CoAgMet Weather")
 # The description of your package
 my_desc$set(Description = "Simple wrapper around Colorado's Mesonet (CoAgMet) API used for accessing weather data.")
 # The urls
-my_desc$set("URL", "http://this")
-my_desc$set("BugReports", "http://that")
+my_desc$set("URL", "https://github.com/gacolitti/coagmetr")
+my_desc$set("BugReports", "https://github.com/gacolitti/coagmetr/issues")
 # Save everyting
 my_desc$write(file = "DESCRIPTION")
 
@@ -43,7 +43,9 @@ use_package("jsonlite")
 use_package("curl")
 use_package("attempt")
 use_package("purrr")
-# use_package("readr")
+use_package("readr")
+use_package("rvest")
+use_package("xml2")
 
 # Clean your description
 use_tidy_description()

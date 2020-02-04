@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# coagmet
+# coagmetr
 
 <!-- badges: start -->
 
@@ -50,7 +50,7 @@ Hourly data for all stations from January 1st, 2020 to current:
 
 ``` r
 get_coagmet_data("hourly", start_date = "2020-01-01")
-#> # A tibble: 69,910 x 17
+#> # A tibble: 69,962 x 17
 #>    station_id datetime            tmean    rh    vp    sr    ws wind_vec
 #>    <chr>      <dttm>              <dbl> <dbl> <dbl> <dbl> <dbl>    <dbl>
 #>  1 akr02      2020-01-01 00:00:00 -7.50 0.769 0.268 0.006  2.36     248.
@@ -63,7 +63,7 @@ get_coagmet_data("hourly", start_date = "2020-01-01")
 #>  8 akr02      2020-01-01 07:00:00 -3.74 0.625 0.290 0.012  2.58     244.
 #>  9 akr02      2020-01-01 08:00:00 -1.30 0.593 0.329 2.31   4.56     271.
 #> 10 akr02      2020-01-01 09:00:00  1.08 0.558 0.369 7.55   3.80     254.
-#> # ... with 69,900 more rows, and 9 more variables: wind_std <dbl>,
+#> # ... with 69,952 more rows, and 9 more variables: wind_std <dbl>,
 #> #   pp <dbl>, st5 <dbl>, st15 <dbl>, gust <dbl>, gusttm <time>,
 #> #   gustdir <dbl>, etr <dbl>, eto <dbl>
 ```
