@@ -1,22 +1,46 @@
+---
+output: github_document
+---
 
-  [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# coagmet
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+`coagmet` facilitates data fetching from [Colorado Climate Center Web Services](https://coagmet.colostate.edu/cgi-bin/web_services.pl).
+
+Currently, only CoAgMet daily, hourly, and five minute data is supported (including daily and hourly soil moisture).
+
+## Installation
+
+``` r
+# install.packages("devtools")
+devtools::install_github("gacolitti/coagmetr")
+```
+## Examples
+
+Station meta data:
+
+```{r example1}
+library(coagmet)
+get_coagmet_data("meta")
+```
+
+Hourly data for all stations from January 1st, 2020 to current:
+
+```{r example2}
+get_coagmet_data("hourly", start_date = "2020-01-01")
+```
 
 
-
-
-# coagmetr
-API Wrapper for CoAgMet Weather
-
-
-
-
-
-
-
-
-
-
-
-
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-  By participating in this project you agree to abide by its terms.
