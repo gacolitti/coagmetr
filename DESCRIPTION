@@ -28,3 +28,5 @@ Suggests:
     covr,
     spelling
 Language: en-US
+Depends: 
+    R (>= 3.2)
