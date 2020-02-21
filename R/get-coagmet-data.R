@@ -2,15 +2,14 @@
 #' 
 #' @param table A character specifying which data table to get. Can be one of 
 #'   \code{"meta", "daily", "hourly", "five_minute", "soilmoisture_daily", "soilmoisture_hourly"}.
-#'   When \code{table = "meta"} source must be either \code{"coag"} or \code{"coop"}.
-#' @param source Currently the only supported source is \code{"coag"}.
 #' @param stations An optional vector of weather station names to get data for. 
 #'   See \url{https://coagmet.colostate.edu/station_index.php}. Defaults to all stations.
-#' @param geo_region A numeric vector of length 4. Used to specify southwest and northwest coordinates
-#'   of the geographic region (box) in which data should be retrieved. 
+#' @param geo_region A numeric vector of length 4. Used to specify southwest and northwest
+#'   coordinates of the geographic region (box) in which data should be retrieved.
 #' @param start_date Start date in \code{yyyy-mm-dd} format.
 #' @param end_date End date in \code{yyyy-mm-dd} format.
-#' @param elements A character vector of one or more elements found in table.
+#' @param elements A character vector of one or more elements found in table. Default is to get all
+#'   elements.
 #'
 #' @importFrom attempt stop_if_all
 #' @importFrom purrr compact
@@ -24,7 +23,7 @@
 #' @export
 #' @rdname get_coagmet_data
 #'
-#' @return the results from the search
+#' @return A tibble
 #' @examples 
 #' \dontrun{
 #' 
@@ -40,19 +39,14 @@
 
 get_coagmet_data <- function(table = c("meta", "daily", "hourly", "five_minute", 
                                           "soilmoisture_daily", "soilmoisture_hourly"),
-                                source = c("coag"),
                                 stations = NULL,
                                 geo_region = NULL,
                                 start_date = NULL,
                                 end_date = NULL,
                                 elements = NULL) {
-    if (table == "meta" & !source %in% c("coag", "coop")) {
-      stop("Meta data is only available for sources coag and coop")
-    }
-  
     args <- list(
       type = table,
-      src = source,
+      src = "coag",
       sids = stations,
       bbox = geo_region,
       sdate = start_date,
@@ -178,8 +172,7 @@ get_coagmet_data <- function(table = c("meta", "daily", "hourly", "five_minute",
                 "vwc24",
                 "ec24",
                 "st24")
-      out <- read_csv(html_text,
-                      col_names = cols)
+      out <- read_csv(html_text, col_names = cols)
     }
     return(out)
   }

@@ -16,15 +16,17 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/gacolitti/coagmetr.svg?branch=master)](https://travis-ci.org/gacolitti/coagmetr)
+[![Codecov test coverage](https://codecov.io/gh/gacolitti/coagmetr/branch/master/graph/badge.svg)](https://codecov.io/gh/gacolitti/coagmetr?branch=master)
 <!-- badges: end -->
 
-`coagmet` facilitates data fetching from [Colorado Climate Center Web Services](https://coagmet.colostate.edu/cgi-bin/web_services.pl).
+`coagmetr` facilitates data fetching from [Colorado Climate Center Web Services](https://coagmet.colostate.edu/cgi-bin/web_services.pl).
 
 Currently, only CoAgMet daily, hourly, and five minute data is supported (including daily and hourly soil moisture).
 
 ## Installation
 
-``` r
+```{r, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("gacolitti/coagmetr")
 ```

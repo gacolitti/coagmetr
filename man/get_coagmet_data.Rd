@@ -7,7 +7,6 @@
 get_coagmet_data(
   table = c("meta", "daily", "hourly", "five_minute", "soilmoisture_daily",
     "soilmoisture_hourly"),
-  source = c("coag"),
   stations = NULL,
   geo_region = NULL,
   start_date = NULL,
@@ -17,25 +16,23 @@ get_coagmet_data(
 }
 \arguments{
 \item{table}{A character specifying which data table to get. Can be one of 
-\code{"meta", "daily", "hourly", "five_minute", "soilmoisture_daily", "soilmoisture_hourly"}.
-When \code{table = "meta"} source must be either \code{"coag"} or \code{"coop"}.}
-
-\item{source}{Currently the only supported source is \code{"coag"}.}
+\code{"meta", "daily", "hourly", "five_minute", "soilmoisture_daily", "soilmoisture_hourly"}.}
 
 \item{stations}{An optional vector of weather station names to get data for. 
 See \url{https://coagmet.colostate.edu/station_index.php}. Defaults to all stations.}
 
-\item{geo_region}{A numeric vector of length 4. Used to specify southwest and northwest coordinates
-of the geographic region (box) in which data should be retrieved.}
+\item{geo_region}{A numeric vector of length 4. Used to specify southwest and northwest
+coordinates of the geographic region (box) in which data should be retrieved.}
 
 \item{start_date}{Start date in \code{yyyy-mm-dd} format.}
 
 \item{end_date}{End date in \code{yyyy-mm-dd} format.}
 
-\item{elements}{A character vector of one or more elements found in table.}
+\item{elements}{A character vector of one or more elements found in table. Default is to get all
+elements.}
 }
 \value{
-the results from the search
+A tibble
 }
 \description{
 Get CoAgMet Data
